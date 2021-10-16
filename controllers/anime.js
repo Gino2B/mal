@@ -13,7 +13,8 @@ export const getAnimes = async (req, res) => {
 export const getAnime = async (req, res) => {
   try {
     const { id } = req.params;
-    const anime = await Anime.findById(id).populate("userId");
+    const anime = await Anime.findById(id);
+    // .populate("userId");
     // look into .populate method for this function
     if (anime) {
       return res.json(anime);
